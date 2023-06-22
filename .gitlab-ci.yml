@@ -4,20 +4,14 @@ stages:
   - schedule
 
 before_script:
-  - apk -U add git openssh-client
-  - mkdir -p ~/.ssh/
-  - echo -e "$SSH_PRIVATE" > ~/.ssh/id_rsa
-  - chmod 600 ~/.ssh/id_rsa
-  - eval `ssh-agent -s`
-  - ssh-add ~/.ssh/id_rsa
-  - ssh-keyscan gitlab.ur.de >> ~/.ssh/known_hosts
+  - apk -U add git
 
 update-repo:
   stage: schedule
   script:
     - git clone git://git.moodle.org/moodle.git vendormoodle
     - cd vendormoodle
-    - git remote add gripsmoodle git@gitlab.uni-regensburg.de:wej35617/moodle.git
+    - git remote add gripsmoodle https://oauth2:$ACCESS_TOKEN@gitlab.uni-regensburg.de:wej35617/moodle.git
     - git push gripsmoodle --tags "refs/remotes/origin/*:refs/heads/*"
   tags: 
     - rrzwdk1
