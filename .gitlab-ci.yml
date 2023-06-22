@@ -10,7 +10,7 @@ before_script:
   - chmod 600 ~/.ssh/id_rsa
   - eval `ssh-agent -s`
   - ssh-add ~/.ssh/id_rsa
-  - ssh-keyscan git.my-server.com >> ~/.ssh/known_hosts
+  - ssh-keyscan gitlab.ur.de >> ~/.ssh/known_hosts
 
 update-repo:
   stage: schedule
