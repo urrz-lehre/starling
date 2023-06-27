@@ -9,7 +9,7 @@ before_script:
 update-repo:
   stage: schedule
   script:
-    - git clone "git://git.moodle.org/moodle.git" vendormoodle
+    - git clone --no-checkout "git://git.moodle.org/moodle.git" vendormoodle
     - cd vendormoodle
     - git remote add gripsmoodle "https://oauth2:$ACCESS_TOKEN@gitlab.uni-regensburg.de/wej35617/moodle.git"
     - git push gripsmoodle --tags "refs/remotes/origin/*:refs/heads/*"
