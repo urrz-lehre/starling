@@ -11,7 +11,8 @@ update-repo:
   script:
     - git clone --no-checkout "git://git.moodle.org/moodle.git" vendormoodle
     - cd vendormoodle
-    - git remote add gripsmoodle "https://oauth2:$ACCESS_TOKEN@gitlab.ur.de/e-learning/moodle.git"
-    - git push gripsmoodle --tags "refs/remotes/origin/*:refs/heads/*"
+    - rm .git/refs/remotes/origin/HEAD
+    - git remote add gripsmoodle "https://oauth2:$ACCESS_TOKEN@gitlab.uni-regensburg.de/e-learning/moodle.git"
+    - git push -u -f --tags gripsmoodle "+refs/remotes/origin/*:refs/heads/*"
   tags: 
     - rrzwdk1
