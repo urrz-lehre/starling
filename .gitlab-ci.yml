@@ -1,0 +1,20 @@
+stages:
+  - build
+
+default:
+  image: docker:28.0.1
+  services:
+    - docker:28.0.1-dind
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
+    - docker info
+
+variables:
+  DOCKER_TLS_CERTDIR: "/certs"
+
+build:
+  stage: build
+  script:
+    - DOCKER_TAG=$(echo $CI_COMMIT_BRANCH | sed -E 's|starling/||g')
+    - docker build -t $CI_REGISTRY_IMAGE:$DOCKER_TAG .
+    - docker push $CI_REGISTRY_IMAGE:$DOCKER_TAG
