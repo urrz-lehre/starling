@@ -1,7 +1,9 @@
 #!/bin/sh
 
 if [ "$(ls -A /var/www/html)" ]; then
-    find /var/www/html -not -name "config.php" -exec rm -rv {} \;
+    mv /var/www/html/config.php /tmp/config.php
+    rm -rf /var/www/html/*
+    mv /tmp/config.php /var/www/html
 fi
 
 # Move GRIPS data to /var/www/html.

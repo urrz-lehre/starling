@@ -1,0 +1,3 @@
+[submodule "mod/verbalfeedback"]
+	path = mod/verbalfeedback
+	url = https://github.com/bfh/moodle-mod_verbalfeedback
