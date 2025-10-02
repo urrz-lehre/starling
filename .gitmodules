@@ -1,3 +1,6 @@
 [submodule "mod/verbalfeedback"]
 	path = mod/verbalfeedback
 	url = https://github.com/bfh/moodle-mod_verbalfeedback
+[submodule "mod/hvp"]
+	path = mod/hvp
+	url = https://github.com/h5p/moodle-mod_hvp
