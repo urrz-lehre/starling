@@ -18,4 +18,6 @@ build:
   script:
     - DOCKER_TAG=$(echo $CI_COMMIT_BRANCH | sed -E 's|starling/||g')
     - docker build -t $CI_REGISTRY_IMAGE:$DOCKER_TAG .
+    - docker tag $CI_REGISTRY_IMAGE:$DOCKER_TAG $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
     - docker push $CI_REGISTRY_IMAGE:$DOCKER_TAG
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
