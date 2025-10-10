@@ -4,3 +4,15 @@
 [submodule "mod/hvp"]
 	path = mod/hvp
 	url = https://github.com/h5p/moodle-mod_hvp
+[submodule "question/behaviour/dfexplicitvalidate"]
+	path = question/behaviour/dfexplicitvalidate
+	url = https://github.com/maths/moodle-qbehaviour_dfexplicitvaildate.git
+[submodule "question/behaviour/dfcbmexplicitvaildate"]
+	path = question/behaviour/dfcbmexplicitvaildate
+	url = https://github.com/maths/moodle-qbehaviour_dfcbmexplicitvaildate.git
+[submodule "question/behaviour/adaptivemultipart"]
+	path = question/behaviour/adaptivemultipart
+	url = https://github.com/maths/moodle-qbehaviour_adaptivemultipart.git
+[submodule "question/type/stack"]
+	path = question/type/stack
+	url = https://github.com/maths/moodle-qtype_stack.git
