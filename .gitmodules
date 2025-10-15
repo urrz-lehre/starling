@@ -4,8 +4,8 @@
 [submodule "mod/hvp"]
 	path = mod/hvp
 	url = https://github.com/h5p/moodle-mod_hvp
-[submodule "question/behaviour/dfexplicitvalidate"]
-	path = question/behaviour/dfexplicitvalidate
+[submodule "question/behaviour/dfexplicitvaildate"]
+	path = question/behaviour/dfexplicitvaildate
 	url = https://github.com/maths/moodle-qbehaviour_dfexplicitvaildate.git
 [submodule "question/behaviour/dfcbmexplicitvaildate"]
 	path = question/behaviour/dfcbmexplicitvaildate
